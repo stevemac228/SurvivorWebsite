@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 
 server = app.listen(port, () => {
 	console.log('listening at localhost:%d',port);
-});
+});  
 
 process.on('SIGINT', () => {
 	console.info('SIGINT signal received.');
