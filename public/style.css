@@ -1,0 +1,104 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+body{
+    background-color: #212121;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+}
+  
+nav{
+    display:inline;
+    position: fixed;
+    top: 0;
+    left:0;
+    right:0;
+    z-index: 9999;
+    height: 64px;
+    background-color: #333333;
+    font-family: 'Open Sans', sans-serif;
+}
+  
+.logo{
+    color: whitesmoke;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 30px;
+    line-height: 55px;
+    float: left;
+    padding: 0px 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.subhead{
+    color: whitesmoke;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    line-height: 55px;
+    float: left;
+    padding: 0px 0px 0px 15px;
+    text-decoration: none;
+}
+
+label{
+    color: whitesmoke;
+}
+
+.Leaderboard{
+    color: whitesmoke;
+}
+
+.teamContainer{
+    display:flex;
+}
+
+.image{
+    max-width:200px;
+    position: relative;
+}
+.photo{
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin:2px 2px 2px 7px;
+}
+
+.photoOut{
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin:2px 2px 2px 7px;
+    filter:grayscale(1);
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    color:whitesmoke;
+    font-size: 30px;
+}
+.bottom-right-Out {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    color:rgb(213, 0, 0);
+    font-size: 30px;
+}
+
+#Name{
+    color: whitesmoke;
+    font-size: 30px;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+ 
