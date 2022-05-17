@@ -1,4 +1,4 @@
 option_settings:
   aws:elasticbeanstalk:environment:proxy:staticfiles:
-    /css: public
-    /images: public/Images
+    /css/: public
+    /images/: public/Images
