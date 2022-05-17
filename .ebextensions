@@ -1,4 +1,3 @@
-
-  aws:elasticbeanstalk:environment:proxy:staticfiles:
-    "/":"public"
-    "/public":"images"
+aws:elasticbeanstalk:environment:proxy:staticfiles:
+   /:public
+   /public:images
