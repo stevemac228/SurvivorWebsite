@@ -1,6 +1,6 @@
 const express = require("express");
 const mongo = require('./utils/db');
-const port = 3000
+const port = process.env.port || 3000;
 const app = express()
 const bodyParser= require('body-parser')
 app.set('view engine', 'ejs')
