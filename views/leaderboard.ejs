@@ -15,7 +15,7 @@
         <a href="/admin" class="subhead" id="admin">Admin</a>
     </div>
     <% for(var i = 0; i < leaderboard.length; i++) {%>
-        <p id="Name"><%= leaderboard[i].Name %> <%= leaderboard[i].Score%></p>:
+        <p id="Name"><%= leaderboard[i].Name %>: <%= leaderboard[i].Score%></p>
         <div class="teamContainer">
                 <div class="image">
                     <% if(leaderboard[i].P1.Out == true){%>
