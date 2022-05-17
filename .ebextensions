@@ -1,5 +1,4 @@
 option_settings:
   aws:elasticbeanstalk:environment:nodejs:staticfiles:
-    "/local": "styles.css"
-    "/local": "images"
-    "/images": "staticimages"
+    "/local": "/styles.css"
+    "/local": "/images"
