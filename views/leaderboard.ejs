@@ -19,7 +19,7 @@
         <div class="teamContainer">
                 <div class="image">
                     <% if(leaderboard[i].P1.Out == true){%>
-                        <img class="photoOut"src="s3://elasticbeanstalk-us-east-1-594679074789/public/Images/<%= leaderboard[i].P1.Name %>.jpeg">
+                        <img class="photoOut"src="d1j3b3el4m4wj8.cloudfront.net/public/Images/<%= leaderboard[i].P1.Name %>.jpeg">
                         <div class="bottom-right-Out"><%=leaderboard[i].P1.Place%></div>
                     <%}else{%>
                         <img class="photo"src="/images/<%= leaderboard[i].P1.Name %>.jpeg">
@@ -28,7 +28,7 @@
                 </div>
                 <div class="image">
                     <% if(leaderboard[i].P2.Out == true){%>
-                        <img class="photoOut"src="/images/<%= leaderboard[i].P2.Name %>.jpeg">
+                        <img class="photoOut"src="d1j3b3el4m4wj8/images/<%= leaderboard[i].P2.Name %>.jpeg">
                         <div class="bottom-right-Out"><%=leaderboard[i].P2.Place%></div>
                     <%}else{%>
                         <img class="photo"src="/images/<%= leaderboard[i].P2.Name %>.jpeg">
