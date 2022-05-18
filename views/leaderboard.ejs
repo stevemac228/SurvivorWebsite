@@ -19,7 +19,7 @@
         <div class="teamContainer">
                 <div class="image">
                     <% if(leaderboard[i].P1.Out == true){%>
-                        <img class="photoOut"src="public/images/<%= leaderboard[i].P1.Name %>.jpeg">
+                        <img class="photoOut"src="s3://elasticbeanstalk-us-east-1-594679074789/public/<%= leaderboard[i].P1.Name %>.jpeg">
                         <div class="bottom-right-Out"><%=leaderboard[i].P1.Place%></div>
                     <%}else{%>
                         <img class="photo"src="/images/<%= leaderboard[i].P1.Name %>.jpeg">
