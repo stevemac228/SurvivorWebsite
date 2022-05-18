@@ -1,4 +1,4 @@
 option_settings:
   aws:elasticbeanstalk:environment:proxy:staticfiles:
-    /local: /style.css
-    /local: /images
+    /local: style.css
+    /local: images
