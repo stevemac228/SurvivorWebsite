@@ -19,7 +19,8 @@ async function loadDBClient() {
 };
 loadDBClient();
 
-app.use(express.static('/Users/steven.macdonald/Documents/Projects/Practice Projects/Survivor Website/public'));
+
+app.use(express.static(__dirname + '/public'));
 app.use((req, res, next) => {
 	req.db = db;	
 	next();
@@ -45,19 +46,20 @@ process.on('SIGINT', () => {
 //})
 
 app.post('/newTeam', (req, res) => {
+	//console.log(req.body)
 	let newTeam = {
-		"Name":req.body.name,
-		"P1":{"Name":req.body.teamSelect[0],"Place":0, Out: false},
-		"P2":{"Name":req.body.teamSelect[1],"Place":0, Out: false},
-		"P3":{"Name":req.body.teamSelect[2],"Place":0, Out: false},
-		"P4":{"Name":req.body.teamSelect[3],"Place":0, Out: false},
-		"Score":0
+		"Name":req.body[4],
+		"P1":{"Name":req.body[0],"Place":1, Out: false},
+		"P2":{"Name":req.body[1],"Place":1, Out: false},
+		"P3":{"Name":req.body[2],"Place":1, Out: false},
+		"P4":{"Name":req.body[3],"Place":1, Out: false},
+		"Score":4
 	}
-	console.log(newTeam)
 	
 	teams.insertOne(newTeam)
+
     .then(result => {
-		res.redirect('/')
+		return res.redirect('/')
     })
 	
 })
@@ -121,6 +123,7 @@ app.get('/', (req, res) => {
     .then(results => {
 		res.render('leaderboard.ejs', { leaderboard: results})
     })
+	//res.render('newTeam.ejs')
 })
 
 app.get('/admin', (req, res) => {

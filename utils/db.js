@@ -1,5 +1,5 @@
 const MongoClient = require("mongodb").MongoClient
-const uri = "mongodb+srv://stevemac228:3323gg6886sm01@cluster0.jv2wr.mongodb.net/S42?retryWrites=true&w=majority";
+const uri = "mongodb+srv://stevemac228:3323gg6886sm01@cluster0.jv2wr.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 

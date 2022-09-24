@@ -1,99 +1,33 @@
 <!DOCTYPE html>
 <head>
     <title>Outdraft</title>
-    <link rel="stylesheet" href="https://elasticbeanstalk-us-east-1-594679074789.s3.amazonaws.com/public/style.css">
+    <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
 </head>
 
 <body>
     <div>
         <a href="/" class="logo" id="home">Outdraft</a>
-        <a href="/newTeam" class="subhead" id="addTeam">Add Team</a>
+        <!--<a href="/newTeam" class="subhead" id="addTeam">Add Team</a>
         <a href="/stats" class="subhead" id="stats">Stats</a>
-        <a href="/admin" class="subhead" id="admin">Admin</a>
+        <a href="/admin" class="subhead" id="admin">Admin</a>-->
     </div>
-    <form action="newTeam" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br>
-        <label for="teamSelect">Choose P1:</label>
-        <select name="teamSelect" id="contestants">
-            <option value="Chanelle">Chanelle</option>
-            <option value="Daniel">Daniel</option>
-            <option value="Drea">Drea</option>
-            <option value="Hai">Hai</option>
-            <option value="Jenny">Jenny</option>
-            <option value="Jonathan">Jonathan</option>
-            <option value="Lindsay">Lindsay</option>
-            <option value="Lydia">Lydia</option>
-            <option value="Marya">Marya</option>
-            <option value="Maryanne">Maryanne</option>
-            <option value="Mike">Mike</option>
-            <option value="Omar">Omar</option>
-            <option value="Rocksroy">Rocksroy</option>
-            <option value="Romeo">Romeo</option>
-            <option value="Swati">Swati</option>
-            <option value="Tori">Tori</option>
-        </select><br>
-        <label for="teamSelect">Choose P2:</label>
-        <select name="teamSelect" id="contestants">
-            <option value="Chanelle">Chanelle</option>
-            <option value="Daniel">Daniel</option>
-            <option value="Drea">Drea</option>
-            <option value="Hai">Hai</option>
-            <option value="Jenny">Jenny</option>
-            <option value="Jonathan">Jonathan</option>
-            <option value="Lindsay">Lindsay</option>
-            <option value="Lydia">Lydia</option>
-            <option value="Marya">Marya</option>
-            <option value="Maryanne">Maryanne</option>
-            <option value="Mike">Mike</option>
-            <option value="Omar">Omar</option>
-            <option value="Rocksroy">Rocksroy</option>
-            <option value="Romeo">Romeo</option>
-            <option value="Swati">Swati</option>
-            <option value="Tori">Tori</option>
-        </select><br>
-        <label for="teamSelect">Choose P3:</label>
-        <select name="teamSelect" id="contestants">
-            <option value="Chanelle">Chanelle</option>
-            <option value="Daniel">Daniel</option>
-            <option value="Drea">Drea</option>
-            <option value="Hai">Hai</option>
-            <option value="Jenny">Jenny</option>
-            <option value="Jonathan">Jonathan</option>
-            <option value="Lindsay">Lindsay</option>
-            <option value="Lydia">Lydia</option>
-            <option value="Marya">Marya</option>
-            <option value="Maryanne">Maryanne</option>
-            <option value="Mike">Mike</option>
-            <option value="Omar">Omar</option>
-            <option value="Rocksroy">Rocksroy</option>
-            <option value="Romeo">Romeo</option>
-            <option value="Swati">Swati</option>
-            <option value="Tori">Tori</option>
-        </select><br>
-        <label for="teamSelect">Choose P4:</label>
-        <select name="teamSelect" id="contestants">
-            <option value="Chanelle">Chanelle</option>
-            <option value="Daniel">Daniel</option>
-            <option value="Drea">Drea</option>
-            <option value="Hai">Hai</option>
-            <option value="Jenny">Jenny</option>
-            <option value="Jonathan">Jonathan</option>
-            <option value="Lindsay">Lindsay</option>
-            <option value="Lydia">Lydia</option>
-            <option value="Marya">Marya</option>
-            <option value="Maryanne">Maryanne</option>
-            <option value="Mike">Mike</option>
-            <option value="Omar">Omar</option>
-            <option value="Rocksroy">Rocksroy</option>
-            <option value="Romeo">Romeo</option>
-            <option value="Swati">Swati</option>
-            <option value="Tori">Tori</option>
-        </select><br>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="teamImageSelect">
+    <% let contestants = ['Cassidy','Cody','Dwight','Elie','Geo','Jay','Jeanine','Jesse','Justine','Karla','Lindsay','Mike','Nneka','Noelle','Owen','Ryan','Sami']%>
+    <% for(var i = 0; i < contestants.length; i++) {%>
+        <div><img class="photo" id="<%=contestants[i] %>" src="/Images/<%= contestants[i] %>.png"></div>
+      <% } %>
+    </div>
+    <div class="nameContainer">
+        <div><input id="nameInput" placeholder="Enter your name"></div>    
+    </div>
+    <div class="buttonContainer">
+        <div><button class="button-6" id='submitTeam' type="submit">Submit</button></div>
+    </div>
 </body>
+<script type="text/javascript" src="/teamSelect.js"></script>
+

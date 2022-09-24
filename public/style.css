@@ -56,18 +56,16 @@ label{
 
 .teamContainer{
     display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
+
 
 .image{
     max-width:200px;
     position: relative;
 }
-.photo{
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    margin:2px 2px 2px 7px;
-}
+
 
 .photoOut{
     width: 100%;
@@ -76,7 +74,7 @@ label{
     margin:2px 2px 2px 7px;
     filter:grayscale(1);
 }
-
+/*
 .bottom-right {
     position: absolute;
     bottom: 8px;
@@ -91,13 +89,99 @@ label{
     color:rgb(213, 0, 0);
     font-size: 30px;
 }
-
+*/
 #Name{
     color: whitesmoke;
     font-size: 30px;
     margin: 0px;
     padding: 0px;
 }
+
+.photo{
+    height: auto;
+    margin:2px 2px 2px 7px;
+}
+
+.teamImageSelect{
+    display: flex;
+    margin-left:2vw;
+    margin-right:2vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    flex-shrink: 0;
+}
+
+.buttonContainer{
+    display: flex;
+    margin-left:2vw;
+    margin-right:2vw;
+    justify-content: center;
+}
+.nameContainer{
+    display: flex;
+    margin-left:25%;
+    margin-right:25%;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+#nameInput{
+    height:40px;
+    background-color:#212121;
+    border: thin rgb(226, 226, 226) solid;
+    width:600px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.button-6 {
+
+  background-color: #ffffff00;
+  border: 1px solid rgba(12, 98, 174, 0.947);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+}
+
+.button-6:hover,
+.button-6:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  background-color: rgba(12, 98, 174, 0.947);
+}
+
+.button-6:hover {
+  transform: translateY(-1px);
+}
+
+.button-6:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+
 
 
 
