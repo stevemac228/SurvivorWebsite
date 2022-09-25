@@ -30,7 +30,7 @@ var Selected = []
             contentType: "application/json",
             processData: false,
             success: function(data){
-                location.href = "/"
+                location.href = "/tempPage"
             }
         });
     }

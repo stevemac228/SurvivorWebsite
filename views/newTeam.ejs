@@ -16,6 +16,13 @@
         <a href="/stats" class="subhead" id="stats">Stats</a>
         <a href="/admin" class="subhead" id="admin">Admin</a>-->
     </div>
+    <div style="text-align:center">
+        <p class="remakeTeam">Everyone will draft a team of <u>4 players</u>. Players points will go up by 1 for each episode they are not eliminated,
+            (The first player emilinated will have a score of 0 and every other player will have a score of 1). The exception to this is that the winning player
+            will get 5 points, second place will get 3 points, and third will get 2 points. The person whos team has the most points at the end of the season will
+            win, so you don't need to pick the winner.</p>
+        <p class="remakeTeam">$10 EMT to stevenmacdonald228@gmail.com before the finale ;)</p>
+    </div>
     <div class="teamImageSelect">
     <% let contestants = ['Cassidy','Cody','Dwight','Elie','Geo','Jay','Jeanine','Jesse','Justine','Karla','Lindsay','Mike','Nneka','Noelle','Owen','Ryan','Sami']%>
     <% for(var i = 0; i < contestants.length; i++) {%>
@@ -23,7 +30,7 @@
       <% } %>
     </div>
     <div class="nameContainer">
-        <div><input id="nameInput" placeholder="Enter your name"></div>    
+        <div><input id="nameInput" placeholder="Enter your name (and optional team name)"></div>    
     </div>
     <div class="buttonContainer">
         <div><button class="button-6" id='submitTeam' type="submit">Submit</button></div>

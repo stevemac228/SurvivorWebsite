@@ -12,14 +12,11 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
   
-nav{
+.nav{
     display:inline;
-    position: fixed;
-    top: 0;
-    left:0;
-    right:0;
-    z-index: 9999;
-    height: 64px;
+    position: relative;
+    margin-bottom: 10px;
+    height: 55px;
     background-color: #333333;
     font-family: 'Open Sans', sans-serif;
 }
@@ -42,8 +39,20 @@ nav{
     font-size: 14px;
     line-height: 55px;
     float: left;
-    padding: 0px 0px 0px 15px;
+    padding: 0px 5px 0px 5px;
     text-decoration: none;
+    text-align: center;
+}
+
+.subhead:hover,
+.subhead:focus {
+  border-color:#3e3e3e;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  background-color:#3e3e3e;
+}
+
+.subhead:hover {
+  transform: translateY(-1px);
 }
 
 label{
@@ -59,6 +68,7 @@ label{
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 
 
 .image{
@@ -106,6 +116,7 @@ label{
     display: flex;
     margin-left:2vw;
     margin-right:2vw;
+    margin-top: 50px;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: row;
@@ -182,7 +193,18 @@ label{
   transform: translateY(0);
 }
 
+.thanksText {
+    color: whitesmoke;
+    font-size: 30px;
+    margin: 0px;
+    padding: 0px;
+}
 
-
+.remakeTeam{
+    color: whitesmoke;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 0px;
+}
 
  

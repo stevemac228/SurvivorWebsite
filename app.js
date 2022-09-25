@@ -41,9 +41,6 @@ process.on('SIGINT', () => {
 
 
 //Routes
-//app.get('/', (req, res) => {
-//	res.render('/Users/steven.macdonald/Documents/Projects/Practice Projects/Survivor Website/views/leaderboard.ejs')
-//})
 
 app.post('/newTeam', (req, res) => {
 	//console.log(req.body)
@@ -118,12 +115,21 @@ app.get('/newTeam', (req, res) => {
     res.render('newTeam.ejs')
 })
 
+app.get('/tempPage', (req, res) => {
+    res.render('tempPage.ejs')
+})
+
+
+app.get('/leaderboard', (req, res) => {
+ 	teams.find().sort({Score: -1}).toArray()
+     .then(results => {
+ 		res.render('leaderboard.ejs', { leaderboard: results})
+     })
+ 	//res.render('newTeam.ejs')
+ })
+
 app.get('/', (req, res) => {
-	teams.find().sort({Score: -1}).toArray()
-    .then(results => {
-		res.render('leaderboard.ejs', { leaderboard: results})
-    })
-	//res.render('newTeam.ejs')
+    res.render('newTeam.ejs')
 })
 
 app.get('/admin', (req, res) => {
