@@ -120,17 +120,13 @@ app.get('/tempPage', (req, res) => {
 })
 
 
-app.get('/leaderboard', (req, res) => {
+app.get('/', (req, res) => {
  	teams.find().sort({Score: -1}).toArray()
      .then(results => {
  		res.render('leaderboard.ejs', { leaderboard: results})
      })
  	//res.render('newTeam.ejs')
  })
-
-app.get('/', (req, res) => {
-    res.render('newTeam.ejs')
-})
 
 app.get('/admin', (req, res) => {
 	teams.find().toArray()
