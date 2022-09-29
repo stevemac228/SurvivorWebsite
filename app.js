@@ -12,7 +12,7 @@ var teams;
 async function loadDBClient() {
 	try {
 		db = await mongo.connectToDB();
-		teams = db.collection("teams");
+		teams = db.collection("Main");
 	}catch(err){
 		throw new Error('Could not connect to the Mongo DB');
 	}
@@ -62,12 +62,15 @@ app.post('/newTeam', (req, res) => {
 })
 
 app.post('/elim', (req, res) => {
+	const filter1 = { "P1.Name": req.body.elimPlayer, "Season": '43'};
+	const filter2 = { "P2.Name": req.body.elimPlayer, "Season": '43'};
+	const filter3 = { "P3.Name": req.body.elimPlayer, "Season": '43'};
+	const filter4 = { "P4.Name": req.body.elimPlayer, "Season": '43'};
+	
 	const eliminatePlayer = async () =>{
 		//Set players Out to True
-		teams.updateMany(
-			{ "P1.Name": req.body.elimPlayer},
-			{ $set:{"P1.Out": true} }
-		)
+		console.log(teams.updateMany(filter1,{ $set:{"P1.Out": true} }))
+		teams.updateMany(filter1,{ $set:{"P1.Out": true} })
 		teams.updateMany(
 			{ "P2.Name": req.body.elimPlayer},
 			{ $set:{"P2.Out": true} }
@@ -120,17 +123,13 @@ app.get('/tempPage', (req, res) => {
 })
 
 
-app.get('/leaderboard', (req, res) => {
+app.get('/', (req, res) => {
  	teams.find().sort({Score: -1}).toArray()
      .then(results => {
  		res.render('leaderboard.ejs', { leaderboard: results})
      })
  	//res.render('newTeam.ejs')
  })
-
-app.get('/', (req, res) => {
-    res.render('newTeam.ejs')
-})
 
 app.get('/admin', (req, res) => {
 	teams.find().toArray()

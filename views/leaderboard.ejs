@@ -10,49 +10,49 @@
 <body>
     <div class="nav">
         <a href="/" class="logo" id="home">Outdraft</a>
-        <a href="/newTeam" class="subhead" id="addTeam">Add Team</a>
-        <!--<a href="/stats" class="subhead" id="stats">Stats</a>
+        <!--<a href="/newTeam" class="subhead" id="addTeam">Add Team</a>
+            <a href="/stats" class="subhead" id="stats">Stats</a>
             <a href="/admin" class="subhead" id="admin">Admin</a>-->
     </div>
-    <% for(var i = 0; i < leaderboard.length; i++) {%>
-        <p id="Name"><%= leaderboard[i].Name %>: <%= leaderboard[i].Score%></p>
+    <% for (var i in leaderboard[2].Episode1) {%>
+        <p id="Name"><%= i %>: <%= leaderboard[2].Episode1[i].Score%></p>
         <div class="teamContainer">
-                <div class="image">
-                    <% if(leaderboard[i].P1.Out == true){%>
-                        <img class="photoOut"src="/Images/<%= leaderboard[i].P1.Name %>.png">
-                        <!--<div class="bottom-right-Out"><%=leaderboard[i].P1.Place%></div>-->
-                    <%}else{%>
-                        <img class="photo"src="/Images/<%= leaderboard[i].P1.Name %>.png">
-                        <!--<div class="bottom-right"><%=leaderboard[i].P1.Place%></div>-->
-                    <%}%>
-                </div>
-                <div class="image">
-                    <% if(leaderboard[i].P2.Out == true){%>
-                        <img class="photoOut"src="/Images/<%= leaderboard[i].P2.Name %>.png">
-                        <!--<div class="bottom-right-Out"><%=leaderboard[i].P2.Place%></div>-->
-                    <%}else{%>
-                        <img class="photo"src="/Images/<%= leaderboard[i].P2.Name %>.png">
-                        <!--<div class="bottom-right"><%=leaderboard[i].P2.Place%></div>-->
-                    <%}%>
-                </div>
-                <div class="image">
-                    <% if(leaderboard[i].P3.Out == true){%>
-                        <img class="photoOut"src="/Images/<%= leaderboard[i].P3.Name %>.png">
-                       <!--<div class="bottom-right-Out"><%=leaderboard[i].P3.Place%></div>-->
-                    <%}else{%>
-                        <img class="photo"src="/Images/<%= leaderboard[i].P3.Name %>.png">
-                        <!--<div class="bottom-right"><%=leaderboard[i].P3.Place%></div>-->
-                    <%}%>
-                </div>
-                <div class="image">
-                    <% if(leaderboard[i].P4.Out == true){%>
-                        <img class="photoOut"src="/Images/<%= leaderboard[i].P4.Name %>.png">
-                        <!--<div class="bottom-right-Out"><%=leaderboard[i].P4.Place%></div>-->
-                    <%}else{%>
-                        <img class="photo"src="/Images/<%= leaderboard[i].P4.Name %>.png">
-                        <!--<div class="bottom-right"><%=leaderboard[i].P4.Place%></div>-->
-                    <%}%>
-                </div>
+            <div class="image">
+                <% if(leaderboard[2].Episode1[i].P1.Out == true){%>
+                    <img class="photoOut"src="/Images/<%= leaderboard[2].Episode1[i].P1.Name %>.png">
+                    <!--<div class="bottom-right-Out"><%=leaderboard[2].Episode1[i].P1.Place%></div>-->
+                <%}else{%>
+                    <img class="photo"src="/Images/<%= leaderboard[2].Episode1[i].P1.Name %>.png">
+                    <!--<div class="bottom-right"><%=leaderboard[2].Episode1[i].P1.Place%></div>-->
+                <%}%>
+            </div>
+            <div class="image">
+                <% if(leaderboard[2].Episode1[i].P2.Out == true){%>
+                    <img class="photoOut"src="/Images/<%= leaderboard[2].Episode1[i].P2.Name %>.png">
+                    <!--<div class="bottom-right-Out"><%=leaderboard[2].Episode1[i].P2.Place%></div>-->
+                <%}else{%>
+                    <img class="photo"src="/Images/<%= leaderboard[2].Episode1[i].P2.Name %>.png">
+                    <!--<div class="bottom-right"><%=leaderboard[2].Episode1[i].P2.Place%></div>-->
+                <%}%>
+            </div>
+            <div class="image">
+                <% if(leaderboard[2].Episode1[i].P3.Out == true){%>
+                    <img class="photoOut"src="/Images/<%= leaderboard[2].Episode1[i].P3.Name %>.png">
+                    <!--<div class="bottom-right-Out"><%=leaderboard[2].Episode1[i].P3.Place%></div>-->
+                <%}else{%>
+                    <img class="photo"src="/Images/<%= leaderboard[2].Episode1[i].P3.Name %>.png">
+                    <!--<div class="bottom-right"><%=leaderboard[2].Episode1[i].P3.Place%></div>-->
+                <%}%>
+            </div>
+            <div class="image">
+                <% if(leaderboard[2].Episode1[i].P4.Out == true){%>
+                    <img class="photoOut"src="/Images/<%= leaderboard[2].Episode1[i].P4.Name %>.png">
+                    <!--<div class="bottom-right-Out"><%=leaderboard[2].Episode1[i].P4.Place%></div>-->
+                <%}else{%>
+                    <img class="photo"src="/Images/<%= leaderboard[2].Episode1[i].P4.Name %>.png">
+                    <!--<div class="bottom-right"><%=leaderboard[2].Episode1[i].P4.Place%></div>-->
+                <%}%>
+            </div>
         </div>
       <% } %>
 </body>

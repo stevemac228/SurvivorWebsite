@@ -7,7 +7,7 @@ async function connectToDB() {
     try {
         // Connect the client to the server
         await client.connect();
-        let db = client.db('S42');
+        let db = client.db('Survivor');
         console.log("Connected successfully to mongoDB");  
         return db;
     } catch (err) {
