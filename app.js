@@ -61,28 +61,46 @@ app.post('/newTeam', (req, res) => {
 	
 })
 
+
+const season = 43
+var episodeNum = 1
+var episode = "Episode" + String(episodeNum)
+var playerNumber = ['P1','P2','P3','P4']
+var seasonFilter = {};
+seasonFilter['Season']=season;
+
+
 app.post('/elim', (req, res) => {
-	const filter1 = { "P1.Name": req.body.elimPlayer, "Season": '43'};
-	const filter2 = { "P2.Name": req.body.elimPlayer, "Season": '43'};
-	const filter3 = { "P3.Name": req.body.elimPlayer, "Season": '43'};
-	const filter4 = { "P4.Name": req.body.elimPlayer, "Season": '43'};
-	
 	const eliminatePlayer = async () =>{
 		//Set players Out to True
-		console.log(teams.updateMany(filter1,{ $set:{"P1.Out": true} }))
-		teams.updateMany(filter1,{ $set:{"P1.Out": true} })
-		teams.updateMany(
-			{ "P2.Name": req.body.elimPlayer},
-			{ $set:{"P2.Out": true} }
-		)
-		teams.updateMany(
-			{ "P3.Name": req.body.elimPlayer},
-			{ $set:{"P3.Out": true} }
-		)
-		teams.updateMany(
-			{ "P4.Name": req.body.elimPlayer},
-			{ $set:{"P4.Out": true} }
-		)
+
+		//TAKE NUMBER OFF END OF EPISODE AND USE THAT AS EPISODE NUNM SO IT DONT RESET
+		//MAKE NEW / ADD ON EPISODE+1
+		// RUN THER POINTS AND OUT AND STUFF ON THAT NEW EPISODE
+
+
+
+		  teams.find(seasonFilter).toArray(function(err, result) {//in this season
+			episodeNum ++;
+			console.log(result[0]['Episode1'])
+			console.log(episodeNum)
+			for (x in result[0]['Episode1']){//in the first episode
+				for(var i = 0; i < playerNumber.length; i++) {//get all players
+					// let filter = {};//filter = 'Season':season , EpisodeX.playername.contestantnumber.Name
+					// filter['Season']=season; 
+					// filter[episode + "." + x + '.' + playerNumber[i] + ".Name"] = req.body.elimPlayer;//if filter is eliminated player
+					// let set = {}
+					// set['$set'] = {[episode + "." + x + '.' + playerNumber[i] + ".Out"] : true}
+					// teams.updateMany(filter,set)//set that they are out
+					// let incrementFilter = {}
+					// incrementFilter['Season']=season; 
+					// incrementFilter[episode + "." + x + '.' + playerNumber[i] + ".Out"] ='false'
+					// let inc = {}
+					// inc['$inc'] = {[episode + "." + x + '.' + playerNumber[i] + ".Place"] : 1,[episode + "." + x + '.Score'] : 1}
+					// teams.updateMany(incrementFilter,inc)
+				}
+			}	
+		  });
 	}
 	
 	const increaseScore = () =>{
