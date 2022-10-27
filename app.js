@@ -140,11 +140,17 @@ app.get('/tempPage', (req, res) => {
     res.render('tempPage.ejs')
 })
 
+function orderBySubKey( input, key ) {
+	return Object.keys( input ).map( key => ({ key, value: input[key] }) ).sort( (a, b) => b.value[key] - a.value[key] );
+  }
 
 app.get('/', (req, res) => {
- 	teams.find().sort({Score: -1}).toArray()
+ 	teams.find({Season: 43}).project({"Episode1" : 1, _id : 0}).sort({'Episode1.Score': -1}).toArray()
      .then(results => {
- 		res.render('leaderboard.ejs', { leaderboard: results})
+		for (x in results[0]){
+			
+			res.render('leaderboard.ejs', { leaderboard:orderBySubKey(results[0][x],'Score')})
+		}
      })
  	//res.render('newTeam.ejs')
  })
@@ -155,6 +161,3 @@ app.get('/admin', (req, res) => {
       res.render('admin.ejs', { leaderboard: results})
     })
 })
-
-
-
